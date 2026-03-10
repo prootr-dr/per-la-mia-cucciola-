@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+body { background: #1a1a1a; color: white; font-family: 'Indie Flower', cursive; margin: 0; overflow-x: hidden; }
+.stars-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at center, #3d051a 0%, #000 100%); }
+.collage-container { padding: 20px; text-align: center; }
+.title-handwritten { font-size: 3rem; color: #ff4d6d; }
+.timer-container { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 15px; display: inline-block; border: 1px solid #ff4d6d; }
+#timer span { color: #ff4d6d; font-weight: bold; font-size: 1.3rem; }
+.hug-btn { background: #ff4d6d; border: none; padding: 12px 25px; border-radius: 30px; color: white; cursor: pointer; font-size: 1.2rem; font-family: 'Indie Flower'; margin-top: 15px; }
+
+.collage-board { position: relative; height: 1000px; max-width: 1100px; margin: 40px auto; }
+.collage-item { position: absolute; background: white; color: #333; padding: 10px; box-shadow: 10px 10px 20px rgba(0,0,0,0.5); transform: rotate(var(--rot)); cursor: pointer; transition: 0.3s; z-index: 1; }
+.collage-item:hover { z-index: 100; transform: scale(1.1) rotate(0deg); }
+
+.video-card { width: 260px; }
+.video-dedica { font-size: 0.9rem; color: #ff4d6d; margin-top: 5px; }
+.polaroid { width: 180px; padding-bottom: 30px; }
+.polaroid img { width: 100%; height: 200px; object-fit: cover; }
+
+.scratch-area { position: relative; width: 200px; height: 250px; background: #000; }
+#scratch-canvas { position: absolute; top: 0; left: 0; z-index: 2; }
+.scratch-secret { position: absolute; width: 100%; height: 100%; z-index: 1; }
+
+.note-dist { width: 200px; background: #fff9c4; }
+.note-bday { width: 220px; background: #e3f2fd; }
+.hidden { display: none; }
+.tape { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 60px; height: 20px; background: rgba(200,200,200,0.5); }
+.pin { position: absolute; top: -10px; left: 50%; width: 12px; height: 12px; background: red; border-radius: 50%; }
+
+@keyframes shake { 0%, 100% { transform: translate(0,0); } 25% { transform: translate(-5px, 5px); } }
+.shaking { animation: shake 0.3s ease-in-out; }
