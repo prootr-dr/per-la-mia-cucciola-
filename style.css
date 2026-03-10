@@ -1,31 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
-body { background: #1a1a1a; color: white; font-family: 'Indie Flower', cursive; margin: 0; overflow-x: hidden; }
-.stars-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at center, #3d051a 0%, #000 100%); }
-.collage-container { padding: 20px; text-align: center; }
-.title-handwritten { font-size: 3rem; color: #ff4d6d; }
-.timer-container { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 15px; display: inline-block; border: 1px solid #ff4d6d; }
-#timer span { color: #ff4d6d; font-weight: bold; font-size: 1.3rem; }
-.hug-btn { background: #ff4d6d; border: none; padding: 12px 25px; border-radius: 30px; color: white; cursor: pointer; font-size: 1.2rem; font-family: 'Indie Flower'; margin-top: 15px; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-.collage-board { position: relative; height: 1000px; max-width: 1100px; margin: 40px auto; }
-.collage-item { position: absolute; background: white; color: #333; padding: 10px; box-shadow: 10px 10px 20px rgba(0,0,0,0.5); transform: rotate(var(--rot)); cursor: pointer; transition: 0.3s; z-index: 1; }
-.collage-item:hover { z-index: 100; transform: scale(1.1) rotate(0deg); }
+body {
+    background: #1a1a1a;
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    overflow-x: hidden;
+}
 
-.video-card { width: 260px; }
-.video-dedica { font-size: 0.9rem; color: #ff4d6d; margin-top: 5px; }
-.polaroid { width: 180px; padding-bottom: 30px; }
-.polaroid img { width: 100%; height: 200px; object-fit: cover; }
+.stars-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at center, #3d051a 0%, #000 100%);
+}
 
-.scratch-area { position: relative; width: 200px; height: 250px; background: #000; }
-#scratch-canvas { position: absolute; top: 0; left: 0; z-index: 2; }
-.scratch-secret { position: absolute; width: 100%; height: 100%; z-index: 1; }
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
 
-.note-dist { width: 200px; background: #fff9c4; }
-.note-bday { width: 220px; background: #e3f2fd; }
+.title { font-size: 2.5rem; color: #ff4d6d; margin-bottom: 20px; }
+
+.timer-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #ff4d6d;
+    margin-bottom: 20px;
+}
+#timer span { color: #ff4d6d; font-weight: bold; }
+
+.hug-btn {
+    background: #ff4d6d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Indie Flower';
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* GRIGLIA RESPONSIVE */
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.card {
+    background: white;
+    color: #333;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 320px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.video-card video { width: 100%; border-radius: 5px; }
+.dedica { font-size: 0.9rem; color: #ff4d6d; margin-top: 10px; }
+
+.polaroid img { width: 100%; height: auto; display: block; }
+
+.note.yellow { background: #fff9c4; }
+.note.blue { background: #e3f2fd; }
+
+.scratch-container {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    margin: 0 auto;
+}
+#scratch-canvas { position: absolute; top: 0; left: 0; z-index: 2; cursor: crosshair; }
+.scratch-secret { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.scratch-secret img { width: 100%; height: 100%; object-fit: cover; }
+
 .hidden { display: none; }
-.tape { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 60px; height: 20px; background: rgba(200,200,200,0.5); }
-.pin { position: absolute; top: -10px; left: 50%; width: 12px; height: 12px; background: red; border-radius: 50%; }
+.tape { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 20px; background: rgba(200,200,200,0.5); }
 
-@keyframes shake { 0%, 100% { transform: translate(0,0); } 25% { transform: translate(-5px, 5px); } }
-.shaking { animation: shake 0.3s ease-in-out; }
+@keyframes shake { 0% { transform: translate(0,0); } 50% { transform: translate(5px, 5px); } }
+.shaking { animation: shake 0.1s infinite; }

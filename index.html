@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>per la mia cucciola❤️‍🔥</title>
+    <title>Per la mia cucciola ❤️‍🔥</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
@@ -11,71 +11,42 @@
 
     <div class="stars-bg"></div>
 
-    <div class="collage-container">
-        <header class="main-header">
-            <h1 class="title-handwritten">Il Mio Cuore per Te❤️‍🔥</h1>
-            <div class="timer-container">
-                <p>Legati dal 26/12/2025:</p>
+    <div class="container">
+        <header>
+            <h1 class="title">Oltre i Confini ❤️‍🔥</h1>
+            <div class="timer-box">
+                <p>Insieme dal 26/12/2025:</p>
                 <div id="timer">
-                    <span id="months">0</span> Months 
-                    <span id="weeks">0</span> Weeks 
-                    <span id="days">0</span> Days 
-                    <span id="hours">0</span> Hours 
-                    <span id="minutes">0</span> Minutes 
-                    <span id="seconds">0</span> Seconds
+                    <span id="months">0</span>m 
+                    <span id="weeks">0</span>s 
+                    <span id="days">0</span>g 
+                    <span id="hours">0</span>o 
+                    <span id="minutes">0</span>m 
+                    <span id="seconds">0</span>s
                 </div>
             </div>
-            <br>
-            <button class="hug-btn" onclick="sendHug()">🫂 Invia un Abbraccio Virtuale</button>
+            <button class="hug-btn" onclick="sendHug()">🫂 Invia un Abbraccio</button>
         </header>
 
-        <div class="collage-board">
+        <main class="collage-grid">
             
-            <div class="collage-item video-card" style="--rot: 1deg; top: 0%; left: 35%;">
+            <div class="card video-card">
                 <div class="tape"></div>
                 <h3>Ti amo vita.</h3>
-                <video controls width="250">
+                <video controls playsinline>
                     <source src="video.mp4" type="video/mp4">
                 </video>
-                <p class="video-dedica">Vita mia ti amo tantissimo sei la mia cucciolina e spero che un giorno ci potremmo vedere dal vivo e abbracciarci forte e sposarti❤️‍🔥</p>
+                <p class="dedica">Vita mia ti amo tantissimo sei la mia cucciolina e spero che un giorno ci potremmo vedere dal vivo e abbracciarci forte e sposarti❤️‍🔥</p>
             </div>
 
-            <div class="collage-item polaroid" style="--rot: -7deg; top: 5%; left: 5%;" onclick="reveal(this)">
-                <div class="tape"></div>
+            <div class="card polaroid" onclick="reveal(this)">
                 <div class="placeholder">❤️‍🔥 Clicca qui</div>
                 <div class="real-content hidden">
                     <img src="foto1.jpg" alt="Foto 1">
                 </div>
             </div>
 
-            <div class="collage-item polaroid" style="--rot: 5deg; top: 35%; right: 5%;" onclick="reveal(this)">
-                <div class="tape"></div>
-                <div class="placeholder">❤️‍🔥 Guardami</div>
-                <div class="real-content hidden">
-                    <img src="foto2.jpeg" alt="Foto 2">
-                </div>
-            </div>
-
-            <div class="collage-item scratch-card" style="--rot: -3deg; top: 45%; left: 8%;">
-                <p>Gratta la nostra foto! 👇</p>
-                <div class="scratch-area">
-                    <div class="scratch-secret">
-                        <img src="foto3.jpg" alt="Foto Segreta" style="width:100%; height:100%; object-fit:cover;">
-                    </div>
-                    <canvas id="scratch-canvas"></canvas>
-                </div>
-            </div>
-
-            <div class="collage-item polaroid" style="--rot: -4deg; bottom: 5%; left: 35%;" onclick="reveal(this)">
-                <div class="tape"></div>
-                <div class="placeholder">❤️‍🔥 Sorpresa</div>
-                <div class="real-content hidden">
-                    <img src="foto4.jpeg" alt="Foto 4">
-                </div>
-            </div>
-
-            <div class="collage-item note-dist" style="--rot: 2deg; top: 5%; right: 5%;" onclick="reveal(this)">
-                <div class="pin"></div>
+            <div class="card note yellow" onclick="reveal(this)">
                 <div class="placeholder">✉️ La Distanza</div>
                 <div class="real-content hidden">
                     <h3>Sempre insieme 🌹</h3>
@@ -83,17 +54,41 @@
                 </div>
             </div>
 
-            <div class="collage-item note-bday" style="--rot: 0deg; bottom: 5%; right: 5%;" onclick="reveal(this)">
-                <div class="tape"></div>
-                <div class="placeholder">🎂 Auguri!</div>
+            <div class="card polaroid" onclick="reveal(this)">
+                <div class="placeholder">❤️‍🔥 Per Te</div>
                 <div class="real-content hidden">
-                    <h3>Buon Compleanno! 🌹</h3>
-                    <p>Vorrei farti mille regali materiali, ma spero che questo "posto tutto nostro" ti faccia capire quanto ti amo.</p>
+                    <img src="foto2.jpeg" alt="Foto 2">
                 </div>
             </div>
 
-        </div>
+            <div class="card scratch-card">
+                <p>Gratta la nostra foto! 👇</p>
+                <div class="scratch-container">
+                    <div class="scratch-secret">
+                        <img src="foto3.jpg" alt="Segreto">
+                    </div>
+                    <canvas id="scratch-canvas"></canvas>
+                </div>
+            </div>
+
+            <div class="card polaroid" onclick="reveal(this)">
+                <div class="placeholder">❤️‍🔥 Sorpresa</div>
+                <div class="real-content hidden">
+                    <img src="foto4.jpeg" alt="Foto 4">
+                </div>
+            </div>
+
+            <div class="card note blue" onclick="reveal(this)">
+                <div class="placeholder">🎂 Auguri!</div>
+                <div class="real-content hidden">
+                    <h3>Buon Compleanno! 🌹</h3>
+                    <p>Spero che questo piccolo posto tutto nostro ti faccia capire quanto sei speciale per me.</p>
+                </div>
+            </div>
+
+        </main>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
